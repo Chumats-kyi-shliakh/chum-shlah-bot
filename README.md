@@ -1,2 +1,2 @@
 # chum-shlah-bot
-Aiogram bot for chukars-kyi-shliakh
+Aiogram bot for chumats-kyi-shliakh
