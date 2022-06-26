@@ -43,7 +43,7 @@ async def input_shape_handler(message: types.Message, state: FSMContext):
     await AddProductStates.save_cancel.set()
     async with state.proxy() as data:
         data['shape'] = shape
-    await message.reply(MESSAGES['add_storage']['save_cancel'], reply_markup=MainKeyboard.save_cancel())
+    await message.reply(MESSAGES['add_product']['save_cancel'], reply_markup=MainKeyboard.save_cancel())
 
 
 async def callback_save_cancel_product(callback_query: types.CallbackQuery, state):
