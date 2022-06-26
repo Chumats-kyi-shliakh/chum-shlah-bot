@@ -6,9 +6,9 @@ class MenuStates(StatesGroup):
 
 
 class AddStorageStates(StatesGroup):
-    add_storage = State()
     input_name = State()
     input_gis = State()
+    save_cancel = State()
 
 
 class AddProductStates(StatesGroup):
@@ -16,5 +16,7 @@ class AddProductStates(StatesGroup):
     input_name = State()
     input_weight = State()
     input_shape = State()
+    save_cancel = State()
+
 
 

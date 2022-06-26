@@ -7,19 +7,19 @@ from bot.utils.state import AddStorageStates, MenuStates
 
 
 async def callback_add_storage(callback_query: types.CallbackQuery, state: FSMContext):
-    await AddStorageStates.add_storage.set()
+    await AddStorageStates.input_name.set()
     await callback_query.message.edit_text(MESSAGES['add_storage']['input_name'])
 
 
 async def message_input_storage_name(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['input_name'] = message.text
-    await AddStorageStates.input_name.set()
+    await AddStorageStates.input_gis.set()
     await message.reply(MESSAGES['add_storage']['input_gis'])
 
 
 async def message_input_storage_gis(message: types.Message, state: FSMContext):
-    await AddStorageStates.input_gis.set()
+    await AddStorageStates.save_cancel.set()
     async with state.proxy() as data:
         data['latitude'] = message.location.latitude
         data['longitude'] = message.location.longitude

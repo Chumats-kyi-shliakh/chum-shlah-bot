@@ -32,3 +32,11 @@ class MainKeyboard:
         save = InlineKeyboardButton('✅ Зберегти', callback_data='save')
         cancel = InlineKeyboardButton('❌ Відмінити', callback_data='cancel')
         return result_kb.add(save, cancel)
+
+    @staticmethod
+    def categories(categories):
+        result_kb = InlineKeyboardMarkup(row_width=1)
+        for category in categories:
+            c_btn = InlineKeyboardButton(f'{category.get("name")}', callback_data=f'category_{category.get("id")}')
+            result_kb.add(c_btn)
+        return result_kb
